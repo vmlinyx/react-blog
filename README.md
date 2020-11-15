@@ -1,2 +1,2 @@
 # react-blog
-Blog with React &amp; Markdown
+Blog with React & Markdown.
