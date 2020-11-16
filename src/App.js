@@ -3,19 +3,20 @@ import { HashRouter, Route } from 'react-router-dom';
 
 import Home from './container/Home';
 import ArticleView from './container/ArticleView';
+import './App.css';
 import './../public/normalize.css';
 
 function App() {
   return (
     <HashRouter>
-      <>
+      <div className="App">
         <Route exact path="/" component={Home} />
         <Route
           exact
           path="/post/:id"
           render={(props) => <ArticleView {...props} />}
         />
-      </>
+      </div>
     </HashRouter>
   );
 }

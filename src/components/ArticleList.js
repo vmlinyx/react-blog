@@ -29,7 +29,7 @@ const ArticleList = () => {
     />
   ));
 
-  return <div>{articleListUI}</div>;
+  return <div className="ArticleList">{articleListUI}</div>;
 };
 
 export default ArticleList;

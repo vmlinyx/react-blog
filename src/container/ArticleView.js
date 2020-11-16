@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
+import Article from '../components/Article';
 
 const ArticleView = (props) => {
   const validId = parseInt(props.match.params.id);
@@ -24,8 +25,7 @@ const ArticleView = (props) => {
 
   return (
     <Layout>
-      <h1>{post.title}</h1>
-      <p>{post.content}</p>
+      <Article title={post.title} content={post.content} />
     </Layout>
   );
 };

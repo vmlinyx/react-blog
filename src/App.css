@@ -1,0 +1,74 @@
+body {
+  color: #09113a;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.5625;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content-wrapper {
+  display: flex;
+}
+
+.Nav {
+  /* flex-basis: 240px;
+  flex-shrink: 0;
+  flex-grow: 1; */
+  width: 240px;
+  border: 2px solid #09113a;
+  box-sizing: border-box;
+  margin: 0 1em;
+}
+
+.Nav .NavBar {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1em;
+  box-sizing: border-box;
+}
+
+.Nav .NavBar .NavTitle {
+  margin: 1em 0;
+}
+
+.ArticleList {
+  margin: 0 1em 0 0;
+  flex-grow: 1;
+}
+
+.ArticleListItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin-bottom: 1em;
+  border: 2px solid #09113a;
+  box-sizing: border-box;
+  padding: 1em;
+  min-height: 170px;
+}
+
+.ArticleList :last-child {
+  margin-bottom: 0;
+}
+
+.ArticleListItem .readMore {
+  color: #09113a;
+  font-weight: 400;
+  padding-bottom: 4px;
+  text-decoration: underline;
+}
+
+.ArticleListItem .title {
+  color: #09113a;
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin: 0 0 0.5em 0;
+  line-height: 1em;
+  text-decoration: none;
+}

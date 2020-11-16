@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Article = () => {
+const Article = ({ title, content }) => {
   return (
-    <div>
-      <hr />
-      <p>VMLINYX {new Date().getFullYear()}</p>
+    <div className="Article">
+      <h1>{title}</h1>
+      <p>{content}</p>
     </div>
   );
 };
