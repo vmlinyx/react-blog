@@ -8,10 +8,10 @@ const Nav = () => {
         <div className="NavTitle">
           <h2>Topic</h2>
         </div>
-        <Link>Careers</Link>
-        <Link>Projects</Link>
-        <Link>Resume</Link>
-        <Link>About</Link>
+        <Link to="/">Careers</Link>
+        <Link to="/">Projects</Link>
+        <Link to="/">Resume</Link>
+        <Link to="/">About</Link>
       </div>
     </div>
   );

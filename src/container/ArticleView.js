@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import Article from '../components/Article';
 
 const ArticleView = (props) => {
+  console.log(props);
   const validId = parseInt(props.match.params.id);
   const data = [
     {
@@ -25,7 +26,7 @@ const ArticleView = (props) => {
 
   return (
     <Layout>
-      <Article title={post.title} content={post.content} />
+      <Article title={post.title} content={post.content} md={props.md} />
     </Layout>
   );
 };
