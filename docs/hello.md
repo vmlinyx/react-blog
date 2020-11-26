@@ -5,4 +5,5 @@
 
 ```js
 const fun = (a, b) => a + b;
+const fun = (a, b) => a + b;
 ```

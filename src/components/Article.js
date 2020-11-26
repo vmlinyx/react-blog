@@ -1,10 +1,19 @@
-import React from 'react';
-const Article = ({ title, content, md }) => {
+import React, { useEffect, useState } from 'react';
+import mdRender from './../utils/markdown';
+
+const Article = ({ filePath }) => {
+  const [mdFile, setMdFile] = useState();
+
+  useEffect(() => {
+    (async () => {
+      const md = await fetch('../' + filePath);
+      const text = await md.text();
+      setMdFile(mdRender(text));
+    })();
+  });
   return (
     <div className="Article">
-      <h1>{title}</h1>
-      <p>{content}</p>
-      <div dangerouslySetInnerHTML={{ __html: md }}></div>
+      <div dangerouslySetInnerHTML={{ __html: mdFile }}></div>
     </div>
   );
 };

@@ -1,14 +1,17 @@
 export const routes = [
     {
       path: '/pages/page-hello',
-      component: "page-hello"
+      filePath: "./../docs/hello.md",
+      component: null
     },
     {
       path: '/pages/page-level-hi',
-      component: "page-level-hi"
+      filePath: "./../docs/level/hi.md",
+      component: null
     },
     {
       path: '/pages/page-test',
-      component: "page-test"
+      filePath: "./../docs/test.md",
+      component: null
     }
 ]

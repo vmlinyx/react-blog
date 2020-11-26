@@ -38,7 +38,8 @@ module.exports = async function prepare() {
 async function genRoutesFile({ siteData: { pages }, sourceDir, pageFiles }) {
   function genRoute({ path: pagePath }, index) {
     const file = pageFiles[index];
-    const filePath = path.resolve(sourceDir, file);
+    // const filePath = path.resolve(sourceDir, file);
+    const filePath = './../docs/' + file;
     // TODO 动态生成 React 组件 + 动态生成路由
     // const code = `
     // {
@@ -53,10 +54,19 @@ async function genRoutesFile({ siteData: { pages }, sourceDir, pageFiles }) {
     //     })
     //   }
     // }`;
+
+    console.log('filePath->', filePath);
+
+    /**
+     * path: 前端路由
+     * content:
+     * component: 后期在 Router.js 注入
+     */
     const code = `
     {
       path: '/pages/${fileToComponentName(file)}',
-      component: ${JSON.stringify(fileToComponentName(file))}
+      filePath: ${JSON.stringify(filePath)},
+      component: null
     }`;
     return code;
   }
