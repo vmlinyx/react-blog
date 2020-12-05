@@ -6,7 +6,7 @@ const Article = ({ filePath }) => {
 
   useEffect(() => {
     (async () => {
-      const md = await fetch('../' + filePath);
+      const md = await fetch(filePath);
       const text = await md.text();
       setMdFile(mdRender(text));
     })();

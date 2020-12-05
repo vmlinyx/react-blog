@@ -1,35 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import ArticleListItem from './ArticleListItem';
+import { routes } from './../../config/.temp/routes';
 
 const ArticleList = () => {
-  const [articleList, setArticleList] = useState([
-    {
-      id: 1,
-      title: '1st title',
-      content: 'blahblahblah',
-    },
-    {
-      id: 2,
-      title: '2nd title',
-      content: 'blahblahblah',
-    },
-    {
-      id: 3,
-      title: '3rd title',
-      content: 'blahblahblah',
-    },
-  ]);
+  const [list, setList] = useState(routes.map((page) => page));
 
-  const articleListUI = articleList.map((item) => (
-    <ArticleListItem
-      key={item.id}
-      id={item.id}
-      title={item.title}
-      content={item.content}
-    />
-  ));
-
-  return <div className="ArticleList">{articleListUI}</div>;
+  return (
+    <div className="ArticleList">
+      {list.map((page, index) => (
+        <ArticleListItem key={index} id={page.path} title={page.title} />
+      ))}
+    </div>
+  );
 };
 
 export default ArticleList;

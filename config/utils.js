@@ -39,34 +39,21 @@ async function genRoutesFile({ siteData: { pages }, sourceDir, pageFiles }) {
   function genRoute({ path: pagePath }, index) {
     const file = pageFiles[index];
     // const filePath = path.resolve(sourceDir, file);
-    const filePath = './../docs/' + file;
+    const filePath = './../../docs/' + file;
     // TODO 动态生成 React 组件 + 动态生成路由
-    // const code = `
-    // {
-    //   path: ${JSON.stringify(pagePath)},
-    //   component: Theme,
-    //   beforeEnter: (to, from, next) => {
-    //     import(${JSON.stringify(filePath)}).then(comp => {
-    //       Vue.component(${JSON.stringify(
-    //         fileToComponentName(file)
-    //       )}, comp.default)
-    //       next()
-    //     })
-    //   }
-    // }`;
 
     console.log('filePath->', filePath);
 
     /**
      * path: 前端路由
-     * content:
+     * filePath: 文件路径
      * component: 后期在 Router.js 注入
      */
     const code = `
     {
+      title: '${fileToTitle(file)}',
       path: '/pages/${fileToComponentName(file)}',
-      filePath: ${JSON.stringify(filePath)},
-      component: null
+      filePath: ${JSON.stringify(filePath)}
     }`;
     return code;
   }
@@ -146,7 +133,7 @@ function sort(arr) {
 }
 
 const indexRE = /\breadme\.md$/i;
-const extRE = /\.(vue|md)$/;
+const extRE = /\.md$/;
 
 function fileToPath(file) {
   if (isIndexFile(file)) {
@@ -161,6 +148,10 @@ function fileToPath(file) {
 }
 function isIndexFile(file) {
   return indexRE.test(file);
+}
+
+function fileToTitle(file) {
+  return file.replace(extRE, '');
 }
 
 function fileToComponentName(file) {
